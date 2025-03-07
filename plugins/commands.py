@@ -6,6 +6,7 @@ from Script import script
 from pyrogram import Client, filters, enums
 from pyrogram.errors import ChatAdminRequired, FloodWait
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from plugins.pm_filter import auto_filter
 from database.ia_filterdb import Media, get_file_details, unpack_new_file_id
 from database.users_chats_db import db
 from info import CHANNELS, ADMINS, AUTH_CHANNEL, LOG_CHANNEL, PICS, BATCH_FILE_CAPTION, CUSTOM_FILE_CAPTION, PROTECT_CONTENT
@@ -89,25 +90,11 @@ async def start(client, message):
             parse_mode=enums.ParseMode.MARKDOWN
             )
         return
-    if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
-        buttons = [
-            [
-             InlineKeyboardButton('How To Use our Bot', url='https://telegram.me/movies_seriesupdates/390')
-            ],[
-            InlineKeyboardButton('🤖 Channel', url='https://telegram.me/movies_seriesupdates'),
-            InlineKeyboardButton('👥 Support Chat', url='https://telegram.me/helpline_4u')
-            ],[
-                InlineKeyboardButton('🔍 Search Movies Here', switch_inline_query_current_chat='')
-            ],[
-            InlineKeyboardButton('💲 Donate us', url='https://freeimage.host/i/HnEhImg')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply_photo(
-            photo=random.choice(PICS),
-            caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
+        if len(message.command) == 2 and message.command[1].startswith('getfile'):
+        movies = message.command[1].split("-", 1)[1] 
+        movie = movies.replace('-',' ')
+        message.text = movie 
+        await auto_filter(client, message) 
         return
     data = message.command[1]
     try:
