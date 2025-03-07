@@ -4,13 +4,13 @@ class script(object):
     HELP_TXT = """𝙷𝙴𝚈 {}
 𝙷𝙴𝚁𝙴 𝙸𝚂 𝚃𝙷𝙴 𝙷𝙴𝙻𝙿 𝙵𝙾𝚁 𝙼𝚈 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂."""
     ABOUT_TXT = """✯ 𝐁𝐨𝐭 𝐍𝐚𝐦𝐞: {}
-✯ 𝐂𝐫𝐞𝐚𝐭𝐨𝐫 <a href=https://telegram.me/Helpline_4u>TMA Adda</a>
+✯ 𝐂𝐫𝐞𝐚𝐭𝐨𝐫 <a href=https://telegram.me/Helpline_4u>Movies Arena</a>
 ✯ 𝐃𝐚𝐭𝐚𝐛𝐚𝐬𝐞  :- MOVIES ARENA 𝐂𝐥𝐨𝐮𝐝
 ✯ 𝐁𝐨𝐭 𝐒𝐞𝐫𝐯𝐞𝐫 :- MOVIES ARENA 𝐒𝐞𝐫𝐯𝐞𝐫𝐬
 ✯ 𝐁𝐨𝐭 𝐕𝐞𝐫𝐬𝐢𝐨𝐧:- 𝐕 𝟒.𝟏.𝟑
 """
     SOURCE_TXT = """<b>NOTE:</b>
-- our bot is a private. 
+- Our bot is a private. 
 - Get Access - https://telegram.me/Helpline_4u 
 
 <b>DEVS:</b>
